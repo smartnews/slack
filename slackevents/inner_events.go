@@ -182,6 +182,11 @@ type TokensRevokedEvent struct {
 	Tokens tokens `json:"tokens"`
 }
 
+// TokensRevokedEvent APP's API tokes are revoked - https://api.slack.com/events/tokens_revoked
+type WorkflowStepExecuteEvent struct {
+	WorkflowStepExecuteId string `json:"workflow_step_execute_id"`
+}
+
 // JSONTime exists so that we can have a String method converting the date
 type JSONTime int64
 
@@ -312,6 +317,8 @@ const (
 	ReactionRemoved = "reaction_removed"
 	// TokensRevoked APP's API tokes are revoked
 	TokensRevoked = "tokens_revoked"
+	// WorkflowStepExecute A workflow step supported by your app should execute
+	WorkflowStepExecute = "workflow_step_execute"
 )
 
 // EventsAPIInnerEventMapping maps INNER Event API events to their corresponding struct
@@ -332,4 +339,5 @@ var EventsAPIInnerEventMapping = map[string]interface{}{
 	ReactionAdded:         ReactionAddedEvent{},
 	ReactionRemoved:       ReactionRemovedEvent{},
 	TokensRevoked:         TokensRevokedEvent{},
+	WorkflowStepExecute:   WorkflowStepExecuteEvent{},
 }
