@@ -54,6 +54,7 @@ type InteractionCallback struct {
 	APIAppID        string          `json:"api_app_id"`
 	BlockID         string          `json:"block_id"`
 	Container       Container       `json:"container"`
+	WorkflowStep    WorkflowStep	`json:"workflow_step"`
 	DialogSubmissionCallback
 	ViewSubmissionCallback
 	ViewClosedCallback

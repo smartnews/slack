@@ -5,6 +5,12 @@ import (
 	"encoding/json"
 )
 
+type WorkflowStep struct {
+	WorkflowStepEditId string `json:"workflow_step_edit_id"`
+	WorkflowId         string `json:"workflow_id"`
+	StepId             string `json:"step_id"`
+}
+
 type UpdateWorkflowStepParameters struct {
 	WorkflowStepEditId string `json:"workflow_step_edit_id"`
 }
