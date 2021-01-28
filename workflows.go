@@ -6,9 +6,23 @@ import (
 )
 
 type WorkflowStep struct {
-	WorkflowStepEditId string `json:"workflow_step_edit_id"`
-	WorkflowId         string `json:"workflow_id"`
-	StepId             string `json:"step_id"`
+	WorkflowStepEditId string                       `json:"workflow_step_edit_id"`
+	WorkflowId         string                       `json:"workflow_id"`
+	StepId             string                       `json:"step_id"`
+	Inputs             map[string]WorkflowStepInput `json:"inputs"`
+	Output             []WorkflowStepOutput         `json:"outputs"`
+}
+
+type WorkflowStepInput struct {
+	Value                   string                 `json:"value"`
+	SkipVariableReplacement bool                   `json:"skip_variable_replacement"`
+	Variables               map[string]interface{} `json:"variables"`
+}
+
+type WorkflowStepOutput struct {
+	Name  string `json:"name"`
+	Type  string `json:"type"`
+	Label string `json:"label"`
 }
 
 type UpdateWorkflowStepParameters struct {
