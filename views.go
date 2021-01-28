@@ -99,6 +99,7 @@ type ModalViewRequest struct {
 	ClearOnClose    bool             `json:"clear_on_close,omitempty"`
 	NotifyOnClose   bool             `json:"notify_on_close,omitempty"`
 	ExternalID      string           `json:"external_id,omitempty"`
+	SubmitDisabled  bool             `json:"submit_disabled,omitempty"`
 }
 
 func (v *ModalViewRequest) ViewType() ViewType {
