@@ -184,7 +184,9 @@ type TokensRevokedEvent struct {
 
 // TokensRevokedEvent APP's API tokes are revoked - https://api.slack.com/events/tokens_revoked
 type WorkflowStepExecuteEvent struct {
-	WorkflowStepExecuteId string `json:"workflow_step_execute_id"`
+	Type         string             `json:"type"`
+	CallbackId   string             `json:"callback_id"`
+	WorkflowStep slack.WorkflowStep `json:"workflow_step"`
 }
 
 // JSONTime exists so that we can have a String method converting the date
