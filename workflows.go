@@ -26,7 +26,11 @@ type WorkflowStepOutput struct {
 }
 
 type UpdateWorkflowStepParameters struct {
-	WorkflowStepEditId string `json:"workflow_step_edit_id"`
+	WorkflowStepEditId string                       `json:"workflow_step_edit_id"`
+	Inputs             map[string]WorkflowStepInput `json:"inputs,omitempty"`
+	Output             []WorkflowStepOutput         `json:"outputs,omitempty"`
+	StepImageUrl       string                       `json:"step_image_url,omitempty"`
+	StepName           string                       `json:"step_name,omitempty"`
 }
 
 // OpenView opens a view for a user.
